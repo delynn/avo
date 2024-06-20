@@ -32,8 +32,8 @@ module Avo
       end
 
       def secret_key_base
-        # Try to fetch the secret key base from ENV or the credentials file
-        key = ENV["SECRET_KEY_BASE"] || Rails.application.credentials.secret_key_base
+        # Try to fetch the secret key base from ENV or the application
+        key = ENV["SECRET_KEY_BASE"] || Rails.application.secret_key_base
 
         # If key is blank and Rails version is less than 7.2.0
         # Try to fetch the secret key base from the secrets file
